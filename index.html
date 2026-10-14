@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeval Earth - Get Key</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            text-align: center;
+            width: 350px;
+        }
+        h2 { margin-bottom: 20px; color: #00ff96; }
+        .btn {
+            background-color: #00ff96;
+            color: #000;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            font-size: 16px;
+            transition: 0.2s;
+        }
+        .btn:hover { background-color: #00cc7a; }
+        .key-box {
+            background: #2b2b2b;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 15px;
+            word-break: break-all;
+            font-family: monospace;
+            color: #00ff96;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Primeval Earth Key System</h2>
+        <p>Bấm vào nút bên dưới để vượt link và nhận Key sử dụng script!</p>
+        
+        <!-- Thay link rút gọn của boss man vào đây -->
+        <button class="btn" onclick="openLink()">VƯỢT LINK LẤY KEY</button>
+        
+        <div id="keySection" style="display:none;">
+            <p>Key của bạn đây:</p>
+            <div class="key-box" id="userKey">0painph10</div>
+            <button class="btn" onclick="copyKey()" style="background-color: #4CAF50; color: white;">SAO CHÉP KEY</button>
+        </div>
+    </div>
+
+    <script>
+        function openLink() {
+            // Chuyển hướng người dùng tới trang vượt link (Linkvertise, Work.ink, v.v.)
+            window.location.href = "https://linkvertise.com/link_cua_ban"; 
+        }
+
+        // Kiểm tra nếu người dùng đã hoàn thành vượt link và quay lại web
+        // (Thường dùng query parameter trên URL, ví dụ: ?completed=true)
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('completed') === 'true') {
+            document.querySelector('.btn').style.display = 'none';
+            document.getElementById('keySection').style.display = 'block';
+        }
+
+        function copyKey() {
+            const keyText = document.getElementById('userKey').innerText;
+            navigator.clipboard.writeText(keyText);
+            alert("Đã sao chép key thành công!");
+        }
+    </script>
+</body>
+</html>
